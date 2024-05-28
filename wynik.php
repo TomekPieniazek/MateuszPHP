@@ -6,10 +6,9 @@
         echo "Nie dzielimy przez zero";
     } else {
         echo $val3;
+        $conn = new mysqli($serv, $user, $pass, $db);
+        $conn->prepare("INSERT INTO wynik VALUES ($val3)");
+        $conn->close();
     }
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    $conn->prepare("INSERT INTO wynik VALUES ($val3)");
-    $conn->close();
 ?>
 
